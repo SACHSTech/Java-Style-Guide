@@ -1,9 +1,9 @@
 # Java Style Guide  
-_A reference on house Java coding style for ICS3U and ICS4U students at St. Augustine CHS in Markham, Ontario, Canada._
-
-
 ## Introduction
-This document explains how we format and write Java programs in our courses. Consistent style makes code easier to read, debug, and share.  
+This is a reference on house Java coding style for ICS3U and ICS4U students at St. Augustine CHS in Markham, Ontario, Canada.
+
+Code style conventions often differ depending on the organization, team, or codebase you’re working in. Professional developers are expected to observe and respect the conventions of the project they join, even if they personally prefer a different style.
+Here at St. Augustine CHS, this guide defines our standard. Follow it consistently so your code looks professional, readable, and familiar to anyone else in the class.
 
 - ICS3U Students: Use this guide as you begin programming.  
 - ICS4U Students: Use this as a refresher and note special conventions when we begin **Object-Oriented Programming (OOP)**.
@@ -73,30 +73,65 @@ int intNumApples; // prefix is redundant
 - Use **good names** and structured code to reduce the need for excessive comments.  
 - Write comments when something needs explanation.  
 - Always put a **space** after `//` or `/**`.  
-- Comments should be **indented** with the code they describe.
+- Comments should be **indented** with the code they describe.  
+- Avoid leaving large blocks of commented-out code or random extra blank lines — clean, compact files are easier to read and mark.
 
-✅ **Good:**
+### When to Use Comments
+
+#### Block comments  
+Use a **block-style `//` comment** above a logical group of lines to describe their overall purpose.  
+This helps the reader understand what that *section* of code is doing.
+
+✅ **Example:**
 ```java
-// This is a comment
+// Draw roof of house
+fill(230, 173, 16);
+triangle(200, 400, 300, 300, 400, 400);
+```
 
-/**
- * This is a Javadoc comment
- */
-while (true) {
-    // Do something
-    something();
-}
+```java
+// Read user input for both sides of the triangle
+sideA = readDouble("Enter the first side: ");
+sideB = readDouble("Enter the second side: ");
+```
+
+Avoid repeating the obvious (“// Set fill colour” when the line already says `fill(...)`).  
+Comments should add *meaning*, not noise.
+
+#### Inline comments  
+Use **inline comments** at the end of a line for short explanations of something that isn’t immediately obvious — like a tricky formula, algorithm, or workaround.
+
+✅ **Example:**
+```java
+double force = mass * Math.pow(velocity, 2) / radius;  // centripetal force formula
 ```
 
 ❌ **Bad:**
 ```java
-//This is a comment
-/**This is a javadoc comment*/
-while (true){
-// Do something
+double force = mass * Math.pow(velocity, 2) / radius; // calculate force
+```
+The latter example adds no new information.
 
-something();
-}
+### Cleanliness and Spacing
+- Keep comments **close** to the code they describe.  
+- Remove any unused or outdated comments before submitting.  
+- Avoid **extra blank lines** at the end of files or between unrelated comments and code — they make the program look unfinished.
+
+✅ **Good:**
+```java
+// Draw windows
+rect(220, 420, 50, 50);
+rect(330, 420, 50, 50);
+```
+
+❌ **Bad:**
+```java
+// Draw windows
+
+
+rect(220, 420, 50, 50);
+rect(330, 420, 50, 50);
+
 ```
 
 ## Indentation
