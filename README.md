@@ -95,7 +95,7 @@ sideA = readDouble("Enter the first side: ");
 sideB = readDouble("Enter the second side: ");
 ```
 
-Avoid repeating the obvious (“// Set fill colour” when the line already says `fill(...)`).  
+Avoid repeating the obvious (`// Set fill colour` when the line already says `fill(...)`).  
 Comments should add *meaning*, not noise.
 
 #### Inline comments  
