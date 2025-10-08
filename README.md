@@ -1,4 +1,5 @@
 # Java Style Guide  
+
 ## Introduction
 Code style conventions often differ depending on the organization, team, or codebase you’re working in. Professional developers are expected to observe and respect the conventions of the project they join, even if they personally prefer a different style.
 
@@ -48,9 +49,7 @@ public class Hypotenuse extends ConsoleProgram {
 - Units may be included if meaningful: `distanceKm`, `timeSec`.  
 - **Boolean variables** often start with `is`, `has`, or `should` (e.g. `isDone`, `hasValue`).  
 
-**Note:** Some other teaching styles add type prefixes (`intNumApples`, `strUserName`).  
-This is **not industry standard** and unnecessary in Java because the type is already declared.  
-Instead, focus on **clear, descriptive names**.
+**Note:** Some style guides suggest adding type prefixes to variable names, e.g.`intNumApples`, `strUserName`. For this style guide, we **will not use these prefixes**. Instead, focus on **clear, descriptive names** and use your IDE's *mouse-hover* feature to reveal more information about a variable's data type.
 
 ✅ **Good:**
 ```java
@@ -173,12 +172,13 @@ rect(330, 420, 50, 50);
 ```
 
 ## Indentation
-
+Consistent indentation makes your code easier to read and understand by visually showing the structure and flow of logic.
 - Use **4 spaces** per indentation level (not tab characters).  
   - Most editors (IntelliJ, VS Code) auto-convert tabs to spaces.  
 - Indent code inside every `{ }` block.
 
 ## Whitespace
+Thoughtful use of whitespace improves readability by separating logical sections of code and preventing lines from feeling crowded or cluttered.
 
 ### Operators
 - **Always surround binary operators with spaces.**
@@ -224,9 +224,6 @@ Think of your code like writing paragraphs in an essay. Use whitespace to separa
 
 ✅ **Good Example:**
 ```java
-package unit1.mathproblems;
-import codehs.*;
-
 /**
  * A simple program to compute the hypotenuse of a right triangle
  * given the length of two sides
@@ -255,9 +252,6 @@ public class Hypotenuse extends ConsoleProgram {
 
 ❌ **Bad Example:**
 ```java
-package unit1.mathproblems;
-import codehs.*;
-
 /**
  * A simple program to compute the hypotenuse of a right triangle
  * given the length of two sides
@@ -265,9 +259,7 @@ import codehs.*;
  */
 public class Hypotenuse extends ConsoleProgram {
     public void run() {
-        double hyp;
-        double sideA;
-        double sideB;
+        double hyp, sideA, sideB;
         sideA = readDouble("Enter the length of the first side: ");
         sideB = readDouble("Enter the length of the second side: ");
         hyp = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
@@ -277,27 +269,79 @@ public class Hypotenuse extends ConsoleProgram {
 ```
 
 ## Javadocs & Methods
-When writing your own methods and classes, you should use **Javadoc comments** immediately above methods to describe what they do.
 
-**Format:**
+When writing your own methods and classes, use **Javadoc comments** immediately above methods to describe what they do.
+
+### When to Use Javadoc vs Regular Comments
+
+Not every method needs a full Javadoc block. The goal is to make code clear, not cluttered. As you move from **ICS3U (introductory programming)** to **ICS4U (object-oriented design)**, the level of documentation should evolve too.
+
+#### Simple Methods and Helper Functions
+At the beginning of ICS3U, we're mostly writing short, single-purpose helper methods such as:
 ```java
-/**
- * A description of your method
- * @param parameterName description of the parameter
- * @return description of the return value
- * @author Your Name
- */
+public void drawTree() { ... }
+public void drawHouse() { ... }
+```
+These are straightforward, descriptive by name, and don’t take parameters or return values.  
+In this case, a **single-line `//` comment** above the method is enough:
+
+✅ **Example:**
+```java
+// Draws a tree using rectangles and ellipses
+public void drawTree() {
+    rect(200, 400, 20, 80);
+    ellipse(210, 360, 80, 80);
+}
 ```
 
-**Example:**
+You don’t need a full Javadoc comment for these. The method name and a short description make the intent clear. 
+
+#### Intermediate Methods and Helper Functions
+Save full Javadoc format for more complex cases, such as when your method:
+- Takes one or more parameters, or
+- Performs logic that isn’t obvious from its name.
+
+✅ **Example:**
 ```java
 /**
- * Computes the difference between two numbers
- * @param num1 The first number
- * @param num2 The second number
- * @return The difference between num1 and num2
+ * Draws a sun at a given position
+ * @param x The x-coordinate of the sun’s centre
+ * @param y The y-coordinate of the sun’s centre
  */
-private static int diff(int num1, int num2) {
-    return num1 - num2;
+public void drawSun(float x, float y) {
+    fill(255, 204, 0);
+    ellipse(x, y, 80, 80);
+}
+```
+
+#### Advanced: Object-Oriented Programming
+By Grade 12, you’re writing code that defines *classes* and *methods* others might reuse — just like real-world software. In this case, **all public methods and classes must use Javadoc comments**, including:
+- Each class definition
+- Each method that accepts parameters or returns a value
+- Each method that performs complex logic or has side effects
+
+✅ **Example:**
+```java
+/**
+ * Represents a bank account that can deposit and withdraw money.
+ */
+public class BankAccount {
+    private double balance;
+
+    /**
+     * Deposits money into the account.
+     * @param amount The amount to deposit
+     */
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    /**
+     * Gets the current balance.
+     * @return The account balance
+     */
+    public double getBalance() {
+        return balance;
+    }
 }
 ```
