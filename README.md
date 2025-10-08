@@ -147,7 +147,7 @@ double force = mass * Math.pow(velocity, 2) / radius;  // calculate force
 The latter example adds no new information.
 
 <br><br>
-## <a name='SpacingAlignmentofInlineComments'></a>Spacing & Alignment of Inline Comments
+### <a name='SpacingAlignmentofInlineComments'></a>Spacing & Alignment of Inline Comments
 Leave **two spaces** between the semicolon (or end of the statement) and the start of an inline `//` comment. One space to the comment text itself.
 
 ✅ **Good:**
@@ -161,7 +161,7 @@ int area = width * height;//Calculate rectangle area
 int area = width * height; //Calculate rectangle area
 ```
 
-### <a name='Exception'></a>Exception: Aligned inline comments
+#### <a name='Exception'></a>Exception: Aligned inline comments
 While the general rule is to use **two spaces** between the end of a statement (semicolon) and the start of an inline `//` comment, you may deviate from this rule to improve readability. Aligning inline comments across related lines of code can make patterns clearer and help others scan your code more easily.
 
 #### <a name='WhenAlignmentHelps'></a>When Alignment Helps
