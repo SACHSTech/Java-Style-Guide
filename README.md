@@ -7,9 +7,10 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 - ICS3U Students: Use this guide as you begin programming.  
 - ICS4U Students: Use this as a refresher and note special conventions when we begin *Object-Oriented Programming (OOP)*.
 
-## Table of Contents
+## <a name='TableofContents'></a>Table of Contents
 
 <!-- vscode-markdown-toc -->
+* [Table of Contents](#TableofContents)
 * [Beginning of Your Program](#BeginningofYourProgram)
 * [Variables](#Variables)
 	* [Naming Rules](#NamingRules)
@@ -18,8 +19,9 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 	* [When to Use Comments](#WhentoUseComments)
 		* [Block comments](#Blockcomments)
 		* [Inline comments](#Inlinecomments)
-* [Spacing & Alignment of Inline Comments](#SpacingAlignmentofInlineComments)
-	* [Exception: Aligned inline comments](#Exception)
+	* [Spacing & Alignment of Inline Comments](#SpacingAlignmentofInlineComments)
+		* [Exception: Aligned inline comments](#Exception:Alignedinlinecomments)
+		* [When Alignment Helps](#WhenAlignmentHelps)
 	* [Cleanliness and Spacing](#CleanlinessandSpacing)
 * [Indentation](#Indentation)
 * [Whitespace](#Whitespace)
@@ -161,7 +163,7 @@ int area = width * height;//Calculate rectangle area
 int area = width * height; //Calculate rectangle area
 ```
 
-#### <a name='Exception'></a>Exception: Aligned inline comments
+#### <a name='Exception:Alignedinlinecomments'></a>Exception: Aligned inline comments
 While the general rule is to use **two spaces** between the end of a statement (semicolon) and the start of an inline `//` comment, you may deviate from this rule to improve readability. Aligning inline comments across related lines of code can make patterns clearer and help others scan your code more easily.
 
 #### <a name='WhenAlignmentHelps'></a>When Alignment Helps
