@@ -41,7 +41,7 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 <!-- /vscode-markdown-toc -->
 
 
-
+<br><br>
 ## <a name='BeginningofYourProgram'></a>Beginning of Your Program
 
 1. **Package statements** should be at the very top of your file.
@@ -67,6 +67,7 @@ public class Hypotenuse extends ConsoleProgram {
 }
 ```
 
+<br><br>
 ## <a name='Variables'></a>Variables
 
 ### <a name='NamingRules'></a>Naming Rules
@@ -100,6 +101,7 @@ int my Score; // contains space
 int intNumApples; // prefix is redundant
 ```
 
+<br><br>
 ## <a name='Commenting'></a>Commenting
 
 - Use **good names** and structured code to reduce the need for excessive comments.  
@@ -144,6 +146,7 @@ double force = mass * Math.pow(velocity, 2) / radius;  // calculate force
 ```
 The latter example adds no new information.
 
+<br><br>
 ## <a name='SpacingAlignmentofInlineComments'></a>Spacing & Alignment of Inline Comments
 Leave **two spaces** between the semicolon (or end of the statement) and the start of an inline `//` comment. One space to the comment text itself.
 
@@ -205,15 +208,18 @@ rect(330, 420, 50, 50);
 
 ```
 
+<br><br>
 ## <a name='Indentation'></a>Indentation
 Consistent indentation makes your code easier to read and understand by visually showing the structure and flow of logic.
 - Use **4 spaces** per indentation level (not tab characters).  
   - Most editors (IntelliJ, VS Code) auto-convert tabs to spaces.  
 - Indent code inside every `{ }` block.
 
+<br><br>
 ## <a name='Whitespace'></a>Whitespace
 Thoughtful use of whitespace improves readability by separating logical sections of code and preventing lines from feeling crowded or cluttered.
 
+<br><br>
 ### <a name='Operators'></a>Operators
 - **Always surround binary operators with spaces.**
 - Use **parentheses** to make order of operations clear.
@@ -248,6 +254,7 @@ a=(b+c)*d;
     ✅ `for (i = 0; i < 10; i++) {`  
     ❌ `for(i=0;i<10;i++){`  
 
+<br><br>
 ## <a name='LogicalParagraphs'></a>Logical Paragraphs
 
 Think of your code like writing paragraphs in an essay. Use whitespace to separate different “sections” of logic:  
@@ -302,8 +309,8 @@ public class Hypotenuse extends ConsoleProgram {
 }
 ```
 
+<br><br>
 ## <a name='JavadocsMethods'></a>Javadocs & Methods
-
 When writing your own methods and classes, use **Javadoc comments** immediately above methods to describe what they do.
 
 ### <a name='WhentoUseJavadocvsRegularComments'></a>When to Use Javadoc vs Regular Comments
