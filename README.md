@@ -24,6 +24,8 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 		* [When Alignment Helps](#WhenAlignmentHelps)
 	* [Cleanliness and Spacing](#CleanlinessandSpacing)
 * [Indentation](#Indentation)
+	* [General Rules](#GeneralRules)
+	* [Breaking Long Lines](#BreakingLongLines)
 * [Whitespace](#Whitespace)
 	* [Operators](#Operators)
 	* [Reserved Words](#ReservedWords)
@@ -34,7 +36,7 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 	* [When to Use Javadoc vs Regular Comments](#WhentoUseJavadocvsRegularComments)
 		* [Simple Methods and Helper Functions](#SimpleMethodsandHelperFunctions)
 		* [Intermediate Methods and Helper Functions](#IntermediateMethodsandHelperFunctions)
-		* [Advanced: Object-Oriented Programming](#Advanced:Object-OrientedProgramming)
+		* [Advanced: Object-Oriented Programming](#Advanced)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -54,7 +56,7 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
    - In ICS3U (pre-OOP), you may only work with a single class (often `Main` or extending `ConsoleProgram`).
    - In ICS4U (OOP), you’ll define multiple classes. Follow **PascalCase** (e.g. `StudentRecord`, `BankAccount`).
 
-**Example:**
+✅ **Example:**
 ```java
 package unit1;
 import codehs.*;
@@ -210,18 +212,57 @@ rect(330, 420, 50, 50);
 
 ```
 
-<br><br>
 ## <a name='Indentation'></a>Indentation
+
 Consistent indentation makes your code easier to read and understand by visually showing the structure and flow of logic.
+
+### <a name='GeneralRules'></a>General Rules
 - Use **4 spaces** per indentation level (not tab characters).  
-  - Most editors (IntelliJ, VS Code) auto-convert tabs to spaces.  
-- Indent code inside every `{ }` block.
+  - Most editors (IntelliJ, VS Code) can automatically convert tabs to spaces.
+- Indent all code **inside** `{ }` braces.  
+  Each new block (for example, inside a class, method, `if`, or `for` loop) should be indented one level deeper than the line that opened it.
+- Closing braces should **align vertically** with the start of the block that opened them.
+- Nested structures (loops inside loops, methods inside classes) should show a clear indentation hierarchy.
+
+✅ **Example:**
+```java
+public void run() {
+    for (int i = 0; i < 5; i++) {
+        if (i % 2 == 0) {
+            System.out.println(i + " is even");
+        } else {
+            System.out.println(i + " is odd");
+        }
+    }
+}
+```
+
+### <a name='BreakingLongLines'></a>Breaking Long Lines
+
+When a line of code is too long to fit comfortably within your editor window (around **100–120 characters**), break it across multiple lines for readability.  
+
+Indent continuation lines **at least 4 spaces** beyond the start of the original line so that it’s clear the statement continues.
+
+✅ **Good Example:**
+```java
+System.out.println("This is a long message that we want to split "
+    + "across multiple lines for readability.");
+```
+
+✅ **Good Example (method call with multiple parameters):**
+```java
+drawShape(
+    100, 200,   // position
+    50, 75,     // size
+    color(255, 0, 0)  // fill colour
+);
+```
+
 
 <br><br>
 ## <a name='Whitespace'></a>Whitespace
 Thoughtful use of whitespace improves readability by separating logical sections of code and preventing lines from feeling crowded or cluttered.
 
-<br><br>
 ### <a name='Operators'></a>Operators
 - **Always surround binary operators with spaces.**
 - Use **parentheses** to make order of operations clear.
@@ -357,7 +398,7 @@ public void drawSun(float x, float y) {
 }
 ```
 
-#### <a name='Advanced:Object-OrientedProgramming'></a>Advanced: Object-Oriented Programming
+#### <a name='Advanced'></a>Advanced: Object-Oriented Programming
 By Grade 12, you’re writing code that defines *classes* and *methods* others might reuse — just like real-world software. In this case, **all public methods and classes must use Javadoc comments**, including:
 - Each class definition
 - Each method that accepts parameters or returns a value
