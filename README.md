@@ -1,9 +1,8 @@
 # Java Style Guide  
 ## Introduction
-This is a reference on house Java coding style for ICS3U and ICS4U students at St. Augustine CHS in Markham, Ontario, Canada.
-
 Code style conventions often differ depending on the organization, team, or codebase you’re working in. Professional developers are expected to observe and respect the conventions of the project they join, even if they personally prefer a different style.
-Here at St. Augustine CHS, this guide defines our standard. Follow it consistently so your code looks professional, readable, and familiar to anyone else in the class.
+
+Here at St. Augustine CHS, this guide will define our standard. Follow it consistently so your code looks professional, readable, and familiar to anyone else in the class.
 
 - ICS3U Students: Use this guide as you begin programming.  
 - ICS4U Students: Use this as a refresher and note special conventions when we begin **Object-Oriented Programming (OOP)**.
@@ -99,7 +98,7 @@ Avoid repeating the obvious (`// Set fill colour` when the line already says `fi
 Comments should add *meaning*, not noise.
 
 #### Inline comments  
-Use **inline comments** at the end of a line for short explanations of something that isn’t immediately obvious — like a tricky formula, algorithm, or workaround.
+Use **inline comments** at the end of a line for short explanations of something that isn’t immediately obvious. For example, use an inline comment to explain a tricky formula, algorithm, or workaround.
 
 ✅ **Example:**
 ```java
@@ -108,9 +107,48 @@ double force = mass * Math.pow(velocity, 2) / radius;  // centripetal force form
 
 ❌ **Bad:**
 ```java
-double force = mass * Math.pow(velocity, 2) / radius; // calculate force
+double force = mass * Math.pow(velocity, 2) / radius;  // calculate force
 ```
 The latter example adds no new information.
+
+## Spacing & Alignment of Inline Comments
+Leave **two spaces** between the semicolon (or end of the statement) and the start of an inline `//` comment. One space to the comment text itself.
+
+✅ **Good:**
+```java
+int area = width * height;  // Calculate rectangle area
+```
+
+❌ **Bad:**
+```java
+int area = width * height;//Calculate rectangle area
+int area = width * height; //Calculate rectangle area
+```
+
+### Exception: Aligned inline comments
+While the general rule is to use **two spaces** between the end of a statement (semicolon) and the start of an inline `//` comment, you may deviate from this rule to improve readability. Aligning inline comments across related lines of code can make patterns clearer and help others scan your code more easily.
+
+#### When Alignment Helps
+You should align inline comments **only** within small, related sections of code such as a group of variable declarations, configuration lines, or constants. Do not try to maintain alignment across unrelated code blocks or separate logical sections.
+
+✅ **Good Example (Aligned Inline Comments)**
+```java
+int x = 100;           // X-position of player
+int y = 250;           // Y-position of player
+int width = 50;        // Player width
+int height = 80;       // Player height
+double velocity = 3.5; // Movement speed in pixels/frame
+```
+
+✅ **Acceptable Example (Alignment Within Block, Standard Elsewhere)**
+```java
+// Player stats
+int score = 0;          // Player's total score
+int lives = 3;          // Remaining lives
+boolean isAlive = true; // Player state
+
+System.out.println("Game start!");  // Initialize output
+```
 
 ### Cleanliness and Spacing
 - Keep comments **close** to the code they describe.  
