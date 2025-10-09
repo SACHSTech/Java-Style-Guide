@@ -10,7 +10,6 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 ## <a name='TableofContents'></a>Table of Contents
 
 <!-- vscode-markdown-toc -->
-* [Table of Contents](#TableofContents)
 * [Beginning of Your Program](#BeginningofYourProgram)
 * [Variables](#Variables)
 	* [Naming Rules](#NamingRules)
@@ -20,7 +19,7 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 		* [Block comments](#Blockcomments)
 		* [Inline comments](#Inlinecomments)
 	* [Spacing & Alignment of Inline Comments](#SpacingAlignmentofInlineComments)
-		* [Exception: Aligned inline comments](#Exception)
+		* [Exception - Aligned Inline Comments](#Exception-AlignedInlineComments)
 		* [When Alignment Helps](#WhenAlignmentHelps)
 	* [Cleanliness and Spacing](#CleanlinessandSpacing)
 * [Indentation](#Indentation)
@@ -36,7 +35,7 @@ Here at St. Augustine CHS, this guide will define our standard. Follow it consis
 	* [When to Use Javadoc vs Regular Comments](#WhentoUseJavadocvsRegularComments)
 		* [Simple Methods and Helper Functions](#SimpleMethodsandHelperFunctions)
 		* [Intermediate Methods and Helper Functions](#IntermediateMethodsandHelperFunctions)
-		* [Advanced: Object-Oriented Programming](#Advanced)
+		* [Advanced - Object-Oriented Programming](#Advanced-Object-OrientedProgramming)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -165,7 +164,7 @@ int area = width * height;//Calculate rectangle area
 int area = width * height; //Calculate rectangle area
 ```
 
-#### <a name='Exception'></a>Exception: Aligned inline comments
+#### <a name='Exception-AlignedInlineComments'></a>Exception - Aligned Inline Comments
 While the general rule is to use **two spaces** between the end of a statement (semicolon) and the start of an inline `//` comment, you may deviate from this rule to improve readability. Aligning inline comments across related lines of code can make patterns clearer and help others scan your code more easily.
 
 #### <a name='WhenAlignmentHelps'></a>When Alignment Helps
@@ -398,7 +397,7 @@ public void drawSun(float x, float y) {
 }
 ```
 
-#### <a name='Advanced'></a>Advanced: Object-Oriented Programming
+#### <a name='Advanced-Object-OrientedProgramming'></a>Advanced - Object-Oriented Programming
 By Grade 12, you’re writing code that defines *classes* and *methods* others might reuse — just like real-world software. In this case, **all public methods and classes must use Javadoc comments**, including:
 - Each class definition
 - Each method that accepts parameters or returns a value
